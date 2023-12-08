@@ -13,7 +13,7 @@ class Calendrier {
 			'Ven.',
 			'Sam.',
 			'Dim.',
-		];
+		]; 
 		this.newYear = newYear;
 	}
 	obtenirJoursDansLeMois() {

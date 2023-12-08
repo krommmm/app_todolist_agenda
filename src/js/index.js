@@ -8,15 +8,13 @@ import GestionnaireFetes from './class/gestionnaireFetes';
 import Button from '../js/class/button';
 import DragAndDrop from './class/dragAndDrop';
 
-
-
 // AFFICHAGE LISTS AU DEBUT
 window.addEventListener('load', function () {
 	localStorage.setItem('typeList', JSON.stringify('todo'));
 	let typeList = JSON.parse(localStorage.getItem('typeList'));
 	document.querySelector('.toDo').classList.remove('blue_light');
 	document.querySelector('.toDo').classList.add('btn-santa');
-	let newList = new GestionnaireLists(typeList).afficherList();
+	new GestionnaireLists(typeList).afficherList();
 });
 
 // OBTENTION DE LA DATE
@@ -101,18 +99,15 @@ infos.forEach((info) => {
 	document.addEventListener('click', (event) => {
 		let clickedElement = event.target;
 		// NETTOYAGE SECTION ANNIVERSAIRE
-		if (clickedElement.classList.contains("aniv")) {
+		if (clickedElement.classList.contains('aniv')) {
 			document.querySelector('.input').style.display = 'none';
-			document.querySelector('.fa-calendar-days').style.display =
-				'none';
+			document.querySelector('.fa-calendar-days').style.display = 'none';
 		} else {
 			document.querySelector('.input').style.display = 'flex';
-			document.querySelector('.fa-calendar-days').style.display =
-				'flex';
+			document.querySelector('.fa-calendar-days').style.display = 'flex';
 		}
 		if (clickedElement.classList.contains(`${info.class}`)) {
 			try {
-				
 				new Button().changerStyles(clickedElement);
 				localStorage.setItem(
 					'typeList',
@@ -241,9 +236,9 @@ document.addEventListener('click', (event) => {
 		let date = parseInt(event.target.textContent); // ex : 1 2 3
 		let year = parseInt(container.querySelector('.paraYear').textContent);
 		let month = container.querySelector('.paraMonth').textContent;
-		month = convertMoisLettreEnInt(newYear, month);
+		month = new Year().convertMoisLettreEnInt(newYear, month);
 		localStorage.setItem(
-			'dateCalendar',
+			'dateCalendar', 
 			JSON.stringify([date, month, year])
 		);
 	}
@@ -309,5 +304,3 @@ document.addEventListener('click', (event) => {
 		}
 	}
 });
-
-
