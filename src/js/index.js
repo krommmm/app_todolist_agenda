@@ -100,8 +100,19 @@ let infos = [
 infos.forEach((info) => {
 	document.addEventListener('click', (event) => {
 		let clickedElement = event.target;
+		// NETTOYAGE SECTION ANNIVERSAIRE
+		if (clickedElement.classList.contains("aniv")) {
+			document.querySelector('.input').style.display = 'none';
+			document.querySelector('.fa-calendar-days').style.display =
+				'none';
+		} else {
+			document.querySelector('.input').style.display = 'flex';
+			document.querySelector('.fa-calendar-days').style.display =
+				'flex';
+		}
 		if (clickedElement.classList.contains(`${info.class}`)) {
 			try {
+				
 				new Button().changerStyles(clickedElement);
 				localStorage.setItem(
 					'typeList',
