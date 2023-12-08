@@ -6,6 +6,7 @@ import Calendrier from './class/calendrier';
 import fetesList from './data/fetesList';
 import GestionnaireFetes from './class/gestionnaireFetes';
 import Button from '../js/class/button';
+import DragAndDrop from './class/dragAndDrop';
 
 
 
@@ -65,6 +66,9 @@ for (let i = annéeDuDébut; i < annéeDuDébut + 3; i++) {
 document.querySelector('.modal_content').appendChild(diapoContainer);
 
 /*---------- GESTION DES CLICKS-------------*/
+
+// TRIER LES LISTS EN DRAG AND DROP
+new DragAndDrop();
 
 document.addEventListener('click', (event) => {
 	let clickedElement = event.target;
@@ -296,62 +300,3 @@ document.addEventListener('click', (event) => {
 });
 
 
-// TRIER LES LISTS
-document.addEventListener('DOMContentLoaded', function () {
-	const sortableList = document.getElementById('sortable-list');
-	let draggedItem = null;
-
-	function dragStart(event) {
-		draggedItem = event.target;
-		event.dataTransfer.effectAllowed = 'move';
-		event.dataTransfer.setData('text/html', draggedItem.innerHTML);
-	}
-
-	function dragOver(event) {
-		event.preventDefault();
-	}
-
-	function drop(event) {
-		event.preventDefault();
-		if (event.target.classList.contains('text')) {
-			let before = draggedItem;
-			let after = event.target;
-			let idBefore = draggedItem.closest('.container').dataset.id;
-			let idAfter = after.closest('.container').dataset.id;
-
-			let newStorage = new Storage();
-			let myStorage = newStorage.getStorage();
-
-			let indexBefore = '';
-			let indexAfter = '';
-
-		
-			let arrayTypeList = ["todo", "work","workToday","wish","course","fetes"];
-			arrayTypeList.forEach((type)=>{
-				let typeList = JSON.parse(localStorage.getItem('typeList'));
-				if(typeList===type){
-					myStorage[type].forEach((item, index) => {
-						if (item.id === idAfter) {
-							indexAfter = index;
-						}
-						if (item.id === idBefore) {
-							indexBefore = index;
-						}
-					});
-					let savedListBefore = myStorage[type][indexBefore];
-					let savedListAfter = myStorage[type][indexAfter];
-	
-					myStorage[type].splice(indexAfter, 1, savedListBefore);
-					myStorage[type].splice(indexBefore, 1, savedListAfter);
-					newStorage.setStorage(myStorage);
-					new GestionnaireLists(typeList).afficherList();
-				}
-			})
-			
-		}
-	}
-
-	sortableList.addEventListener('dragstart', dragStart);
-	sortableList.addEventListener('dragover', dragOver);
-	sortableList.addEventListener('drop', drop);
-});
