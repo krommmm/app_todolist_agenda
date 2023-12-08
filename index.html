@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="./src/css/index.css" />
+		<title>Document</title>
+		<script
+			src="https://kit.fontawesome.com/65211b898e.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<header></header>
+
+		<section id="presentation"></section>
+
+		<section id="choix">
+			<div class="lists">
+				<button class="toDo blue_light btn">
+					Todo<img
+						class="btn-hat"
+						src="./src/images/santaHat.webp"
+						alt=""
+					/>
+				</button>
+				<button class="workToday blue_light btn">
+					Work-today<img
+						class="btn-hat"
+						src="./src/images/santaHat.webp"
+						alt=""
+					/>
+				</button>
+				<button class="work blue_light btn">
+					Work<img
+						class="btn-hat"
+						src="./src/images/santaHat.webp"
+						alt=""
+					/>
+				</button>
+				<button class="wish blue_light btn">
+					Wish<img
+						class="btn-hat"
+						src="./src/images/santaHat.webp"
+						alt=""
+					/>
+				</button>
+				<button class="course blue_light btn">
+					Course<img
+						class="btn-hat"
+						src="./src/images/santaHat.webp"
+						alt=""
+					/>
+				</button>
+				<button class="fetes blue_light btn">
+					Fêtes
+					<img
+						class="btn-hat"
+						src="./src/images/santaHat.webp"
+						alt=""
+					/>
+				</button>
+				<button class="aniv blue_light btn">
+					Anniv
+					<img
+						class="btn-hat"
+						src="./src/images/santaHat.webp"
+						alt=""
+					/>
+				</button>
+			</div>
+		</section>
+		<section class="calendar">
+			<div class="modal hidden">
+				<div class="modal_content">
+					<div class="arrow left-arrow">
+						<i class="fa-solid fa-angles-left"></i>
+					</div>
+					<div class="arrow right-arrow">
+						<i class="fa-solid fa-angles-right"></i>
+					</div>
+					<div class="when">
+						<button class="search btn blue_light">Chercher</button>
+						<i
+							class="fa-regular fa-circle-xmark close-calendar"
+						></i>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="list_container">
+			<i class="fa-regular fa-calendar-days inactive"></i>
+			<form class="input">
+				<input
+					class="myInput"
+					type="text"
+					placeholder="Entrer une tâche"
+				/>
+
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</form>
+
+			<div  id="sortable-list" class="list"></div>
+		
+		</section>
+		<script src="dist/bundle.js"></script>
+	</body>
+</html>

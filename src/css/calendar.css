@@ -1,0 +1,202 @@
+.calendar {
+	position: relative;
+	top: 100px;
+	left: 34vw;
+	z-index: 9;
+	transition-duration: 1s;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.containerCalendar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal_content {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid black;
+	padding: 5px;
+	width: 100%;
+	background-color: white;
+	position: relative;
+	width: 400px;
+	overflow: hidden;
+	border-radius: 15px;
+}
+
+.modal_content .title {
+	display: flex;
+}
+.modal_content .title .month {
+	margin-right: 5px;
+}
+
+.days {
+	display: flex;
+}
+
+.days .day {
+	margin: 15px;
+	border: 1px solid black;
+	padding: 5px;
+	cursor: pointer;
+}
+.modal {
+	transition-duration: 0.5s;
+	position: absolute;
+}
+.hidden {
+	transform: translateY(-400%);
+}
+
+.start,
+.end {
+	margin-top: 15px;
+}
+
+.arrow {
+	position: absolute;
+	top: 10px;
+	cursor: pointer;
+	z-index: 10;
+	font-size: 20px;
+}
+.left-arrow {
+	left: 15px;
+}
+.right-arrow {
+	right: 15px;
+}
+
+.list .container {
+	margin: 10px;
+	width: 31vw;
+	min-width: 300px;
+}
+#diapo_container {
+	display: flex;
+	transition-duration: 0.5s;
+	margin-top: 25px;
+}
+.mois {
+	width: 400px;
+}
+
+.divPara {
+	display: flex;
+}
+.divPara .paraMonth {
+	margin-right: 5px;
+	font-weight: 600;
+	text-transform: capitalize;
+	margin-right: 5px;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: rgb(0, 102, 255);
+	font-size: 22px;
+}
+.divPara .paraYear {
+	font-weight: 600;
+	text-transform: capitalize;
+	margin-right: 5px;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: rgb(0, 102, 255);
+
+	font-size: 22px;
+}
+.close-calendar {
+	font-size: 29px;
+	margin-top: 5px;
+	margin-left: 10px;
+	color: red;
+	cursor: pointer;
+}
+th {
+	color: black;
+}
+td {
+	width: 10px;
+	height: 10px;
+	padding: 15px;
+}
+.joursSemaine {
+	cursor: pointer;
+	text-align: center;
+	width: 10px;
+	height: 10px;
+}
+.joursSemaine:hover {
+	border: 1px solid black;
+	width: 10px;
+	height: 10px;
+	padding: 1px;
+	background-color: rgb(0, 102, 255);
+}
+
+.when {
+	position: absolute;
+	top: 0px;
+	left: 40%;
+}
+.when .start {
+	margin-right: 5px;
+	background-color: green;
+}
+.grey {
+	background-color: grey;
+}
+
+.timeLeft {
+	font-size: 15px;
+	font-family: mandalore;
+	color: rgb(61, 132, 238);
+}
+
+@media screen and (max-width: 600px) {
+
+	#list_container {
+		width: 300px;
+	}
+	.input {
+		width: 300px;
+	}
+	.input input {
+		width: 300px;
+	}
+	.container {
+		width: 300px;
+	}
+	.fa-magnifying-glass {
+		left: 25px;
+	}
+	.modal_content {
+		width: 300px;
+	}
+	td {
+		padding: 6px;
+	}
+	.mois {
+		width: 300px;
+	}
+	#presentation {
+		background-size: 259px;
+	}
+	body .btn {
+		min-width:100px;
+	
+	}
+	body .when {
+		position: absolute;
+		top: 0px;
+		left: 25%;
+	}
+}

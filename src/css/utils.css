@@ -1,0 +1,84 @@
+body,
+html {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(0, 102, 255);
+}
+@font-face {
+	font-family: mandalore;
+	src: url("../font/mandalore.ttf");
+}
+@font-face {
+	font-family: dino;
+	src: url("../font/Dinotype-Demo.ttf");
+}
+
+.btn {
+	width: auto;
+	border: none;
+	padding: 7px;
+	border-radius: 5px;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	font-weight: 600;
+}
+.minus{
+	text-transform:lowercase;
+}
+.dino{
+	font-family:dino;
+}
+.red{
+	color: red!important;
+}
+.orange{
+	color: orange!important;
+}
+
+.fa-calendar-days{
+	border-radius: 15px;
+	padding: 10px;
+	font-size: 25px;
+	border: 2px solid black;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	background-color: white;
+	color: black;
+	cursor:pointer;
+}
+
+.btn:active {
+	transform: scaleX(0.8);
+}
+.blue {
+	background-color: rgb(0, 102, 255)!important;
+	color: white;
+  background-color: rgb(0, 102, 255);
+  font-size: 14px;
+	border: 1px solid black;
+  margin: 5px;
+}
+.blue_light {
+	background-color: rgb(0, 102, 255);
+	color: white;
+  background-color: rgb(0, 102, 255);
+  font-size: 14px;border: 1px solid white;
+
+  margin: 5px;
+}
+.purple{
+	background-color: rgb(186, 104, 200);
+	color: white;
+}
+.purple_délavé{
+	background-color: rgba(255, 255, 255,.3);
+	color: grey;
+}
+.inactive{
+	opacity:.5;
+}
+
