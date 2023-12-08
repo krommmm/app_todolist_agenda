@@ -325,104 +325,29 @@ document.addEventListener('DOMContentLoaded', function () {
 			let indexBefore = '';
 			let indexAfter = '';
 
-			let typeList = JSON.parse(localStorage.getItem('typeList'));
-			if (typeList === 'todo') {
-				myStorage.todo.forEach((item, index) => {
-					if (item.id === idAfter) {
-						indexAfter = index;
-					}
-					if (item.id === idBefore) {
-						indexBefore = index;
-					}
-				});
-				let savedListBefore = myStorage.todo[indexBefore];
-				let savedListAfter = myStorage.todo[indexAfter];
-
-				myStorage.todo.splice(indexAfter, 1, savedListBefore);
-				myStorage.todo.splice(indexBefore, 1, savedListAfter);
-				newStorage.setStorage(myStorage);
-				new GestionnaireLists(typeList).afficherList();
-			} else if (typeList === 'workToday') {
-				myStorage.workToday.forEach((item, index) => {
-					if (item.id === idAfter) {
-						indexAfter = index;
-					}
-					if (item.id === idBefore) {
-						indexBefore = index;
-					}
-				});
-				let savedListBefore = myStorage.workToday[indexBefore];
-				let savedListAfter = myStorage.workToday[indexAfter];
-
-				myStorage.workToday.splice(indexAfter, 1, savedListBefore);
-				myStorage.workToday.splice(indexBefore, 1, savedListAfter);
-				newStorage.setStorage(myStorage);
-				new GestionnaireLists(typeList).afficherList();
-			} else if (typeList === 'work') {
-				myStorage.work.forEach((item, index) => {
-					if (item.id === idAfter) {
-						indexAfter = index;
-					}
-					if (item.id === idBefore) {
-						indexBefore = index;
-					}
-				});
-				let savedListBefore = myStorage.work[indexBefore];
-				let savedListAfter = myStorage.work[indexAfter];
-
-				myStorage.work.splice(indexAfter, 1, savedListBefore);
-				myStorage.work.splice(indexBefore, 1, savedListAfter);
-				newStorage.setStorage(myStorage);
-				new GestionnaireLists(typeList).afficherList();
-			} else if (typeList === 'wish') {
-				myStorage.wish.forEach((item, index) => {
-					if (item.id === idAfter) {
-						indexAfter = index;
-					}
-					if (item.id === idBefore) {
-						indexBefore = index;
-					}
-				});
-				let savedListBefore = myStorage.wish[indexBefore];
-				let savedListAfter = myStorage.wish[indexAfter];
-
-				myStorage.wish.splice(indexAfter, 1, savedListBefore);
-				myStorage.wish.splice(indexBefore, 1, savedListAfter);
-				newStorage.setStorage(myStorage);
-				new GestionnaireLists(typeList).afficherList();
-			} else if (typeList === 'fetes') {
-				myStorage.fetes.forEach((item, index) => {
-					if (item.id === idAfter) {
-						indexAfter = index;
-					}
-					if (item.id === idBefore) {
-						indexBefore = index;
-					}
-				});
-				let savedListBefore = myStorage.fetes[indexBefore];
-				let savedListAfter = myStorage.fetes[indexAfter];
-
-				myStorage.fetes.splice(indexAfter, 1, savedListBefore);
-				myStorage.fetes.splice(indexBefore, 1, savedListAfter);
-				newStorage.setStorage(myStorage);
-				new GestionnaireLists(typeList).afficherList();
-			} else if (typeList === 'course') {
-				myStorage.course.forEach((item, index) => {
-					if (item.id === idAfter) {
-						indexAfter = index;
-					}
-					if (item.id === idBefore) {
-						indexBefore = index;
-					}
-				});
-				let savedListBefore = myStorage.course[indexBefore];
-				let savedListAfter = myStorage.course[indexAfter];
-
-				myStorage.course.splice(indexAfter, 1, savedListBefore);
-				myStorage.course.splice(indexBefore, 1, savedListAfter);
-				newStorage.setStorage(myStorage);
-				new GestionnaireLists(typeList).afficherList();
-			}
+		
+			let arrayTypeList = ["todo", "work","workToday","wish","course","fetes"];
+			arrayTypeList.forEach((type)=>{
+				let typeList = JSON.parse(localStorage.getItem('typeList'));
+				if(typeList===type){
+					myStorage[type].forEach((item, index) => {
+						if (item.id === idAfter) {
+							indexAfter = index;
+						}
+						if (item.id === idBefore) {
+							indexBefore = index;
+						}
+					});
+					let savedListBefore = myStorage[type][indexBefore];
+					let savedListAfter = myStorage[type][indexAfter];
+	
+					myStorage[type].splice(indexAfter, 1, savedListBefore);
+					myStorage[type].splice(indexBefore, 1, savedListAfter);
+					newStorage.setStorage(myStorage);
+					new GestionnaireLists(typeList).afficherList();
+				}
+			})
+			
 		}
 	}
 
