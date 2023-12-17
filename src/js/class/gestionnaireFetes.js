@@ -23,11 +23,7 @@ class GestionnaireFetes {
 		);
 
 		this.anniversaire.forEach((aniv) => {
-			let dateAnivMs = new Date(
-				aniv.date[2],
-				aniv.date[1] - 1,
-				aniv.date[0]
-			);
+			let dateAnivMs = new Date(aniv.date[2], aniv.date[1], aniv.date[0]);
 
 			let tempsRestantPourAniversaire =
 				(new Date(dateMoisAnnee[2], aniv.date[1] - 1, aniv.date[0]) -

@@ -238,7 +238,7 @@ document.addEventListener('click', (event) => {
 		let month = container.querySelector('.paraMonth').textContent;
 		month = new Year().convertMoisLettreEnInt(newYear, month);
 		localStorage.setItem(
-			'dateCalendar', 
+			'dateCalendar',
 			JSON.stringify([date, month, year])
 		);
 	}
