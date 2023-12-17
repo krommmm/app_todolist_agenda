@@ -1,7 +1,7 @@
 
 const fetesList = {
 	anniversaire: [
-		{date : [15,1,1957],prenom : 'colette'},
+		{date : [15,1,1959],prenom : 'colette'},
 		{ date: [4, 2, 1993], prenom: 'quentin' },
 		{ date: [13, 2, 1996], prenom: 'axelle' },
 		{ date: [28, 2, 1991], prenom: 'edwald' },
