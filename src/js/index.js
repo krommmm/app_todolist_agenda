@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
 	localStorage.setItem('typeList', JSON.stringify('todo'));
 	let typeList = JSON.parse(localStorage.getItem('typeList'));
 	document.querySelector('.toDo').classList.remove('blue_light');
-	document.querySelector('.toDo').classList.add('btn-santa');
+	document.querySelector('.toDo').classList.add('btn-default');
 	new GestionnaireLists(typeList).afficherList();
 });
 
@@ -73,11 +73,11 @@ document.addEventListener('click', (event) => {
 	if (clickedElement.classList.contains('aniv')) {
 		let btns = document.querySelectorAll('.btn');
 		btns.forEach((btn) => {
-			btn.classList.remove('btn-santa');
+			btn.classList.remove('btn-default');
 			btn.classList.add('blue_light');
 		});
 		clickedElement.classList.remove('blue_light');
-		clickedElement.classList.add('btn-santa');
+		clickedElement.classList.add('btn-default');
 		localStorage.setItem('typeList', JSON.stringify('aniv'));
 		let typeList = JSON.parse(localStorage.getItem('typeList'));
 		let aniv = new GestionnaireFetes(fetesList);

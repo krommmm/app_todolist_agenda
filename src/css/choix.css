@@ -17,6 +17,11 @@
 	border-radius: 5px;
 }
 
+.btn-default{
+	background-color: white;
+	color: black;
+	font-size: 14px;
+}
 
 .btn-santa {
 	position: relative;

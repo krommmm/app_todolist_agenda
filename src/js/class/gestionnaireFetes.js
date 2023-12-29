@@ -49,6 +49,7 @@ class GestionnaireFetes {
 			let differenceMs = currentDateMs - dateInMs;
 			let differenceYear = differenceMs / (1000 * 60 * 60 * 24 * 30.436875 * 12);
 
+			
 			const isAnniversaireProche = tempsRestantPourAniversaire <= 31 && tempsRestantPourAniversaire > 0;
 			const UNITEE_TEMPS = isAnniversaireProche ? 'jours' : '';
  			age = isAnniversaireProche ? parseInt(differenceYear+1) : parseInt(differenceYear);
