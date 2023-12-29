@@ -32,17 +32,26 @@ class GestionnaireFetes {
 		let dateMoisAnnee = dateActuelleEnMs.obtenirDateActuelle();
 		let dateActuelleMs = this.getCurrentDateMS();
 
+
+		const getDateInMs = (date) => {
+			let dateInMs = new Date(date[2], date[1] - 1, date[0]);
+			return dateInMs.getTime();
+		};
+
 		this.anniversaire.forEach((aniv) => {
 			let dateAnivMs = new Date(aniv.date[2], aniv.date[1], aniv.date[0]);
 			let tempsRestantPourAniversaire = this.getTempsRestantPourAnniversaire(dateMoisAnnee, aniv, dateActuelleMs);
 			let ageReel = this.calculerAge(dateActuelleMs, dateAnivMs);
 			let age = Math.floor(ageReel);
 
-		
+			let currentDateMs = new Date().getTime();
+			let dateInMs = getDateInMs(aniv.date);
+			let differenceMs = currentDateMs - dateInMs;
+			let differenceYear = differenceMs / (1000 * 60 * 60 * 24 * 30.436875 * 12);
+
 			const isAnniversaireProche = tempsRestantPourAniversaire <= 31 && tempsRestantPourAniversaire > 0;
-			
 			const UNITEE_TEMPS = isAnniversaireProche ? 'jours' : '';
- 			age = isAnniversaireProche ? Math.floor(ageReel) + 1 : Math.floor(ageReel);
+ 			age = isAnniversaireProche ? parseInt(differenceYear+1) : parseInt(differenceYear);
 			const VERBE = isAnniversaireProche ? 'aura' : 'a';
 			const PREPOSITION = isAnniversaireProche ? 'dans' : '';
 			const STYLE = isAnniversaireProche ? 'timeLeft red' : 'timeLeft minus';
