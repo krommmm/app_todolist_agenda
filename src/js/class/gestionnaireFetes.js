@@ -46,7 +46,7 @@ class GestionnaireFetes {
 
 			let currentDateMs = new Date().getTime();
 			let dateInMs = getDateInMs(aniv.date);
-			let differenceMs = currentDateMs - dateInMs;
+			let differenceMs = currentDateMs - (dateInMs-(1000*60*60*20));
 			let differenceYear = differenceMs / (1000 * 60 * 60 * 24 * 30.436875 * 12);
 
 			

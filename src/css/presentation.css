@@ -27,6 +27,16 @@
     }
   }
 
+      /* printemps (pacques) */
+/* 
+#presentation{
+    background-image:url("../images/HangingWithPeeps.svg");
+    height: 400px;
+    background-repeat:no-repeat;
+    background-position: center;
+}  */
+
+
 /* summer  */
 
 /* #presentation{
@@ -58,11 +68,3 @@ body .btn{
   } */
 
 
-    /* printemps (pacques) */
-
-/* #presentation{
-    background-image:url("../images/HangingWithPeeps.svg");
-    height: 400px;
-    background-repeat:no-repeat;
-    background-position: center;
-}  */
