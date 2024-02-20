@@ -17,7 +17,7 @@
 	border-radius: 5px;
 }
 
-.btn-default{
+.btn-default {
 	background-color: white;
 	color: black;
 	font-size: 14px;
@@ -44,4 +44,9 @@
 	left: -17px;
 	height: 44px;
 	filter: drop-shadow(0 2px 1px rgb(0 0 0 / 0.25));
+}
+@media screen and (max-width: 630px) {
+	body #choix .lists {
+		text-align: center;
+	}
 }

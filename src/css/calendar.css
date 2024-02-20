@@ -1,6 +1,5 @@
 .calendar {
 	position: relative;
-	top: 100px;
 	left: 34vw;
 	z-index: 9;
 	transition-duration: 1s;
@@ -162,6 +161,10 @@ td {
 }
 
 @media screen and (max-width: 600px) {
+
+	body .calendar {
+	top: -50px;
+	}
 
 	#list_container {
 		width: 300px;
