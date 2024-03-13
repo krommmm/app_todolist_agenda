@@ -13,7 +13,7 @@ class Calendrier {
 			'Ven.',
 			'Sam.',
 			'Dim.',
-		]; 
+		];
 		this.newYear = newYear;
 	}
 	obtenirJoursDansLeMois() {
@@ -33,7 +33,7 @@ class Calendrier {
 
 		return cpt;
 	}
-	tournerADroite(cpt,nombreDeMois) {
+	tournerADroite(cpt, nombreDeMois) {
 		cpt++;
 		if (cpt === nombreDeMois) {
 			return cpt - 1;
@@ -47,6 +47,14 @@ class Calendrier {
 		return cpt;
 	}
 	afficherCalendrier() {
+		// cacher les jours avant la date actuel
+		let dateActuelle = new Year().obtenirDateActuelle();
+		let newYear = new Year();
+		let listMois = newYear.donnée.month;
+		 
+		let moisActuelleEnLettre = Object.keys(listMois).filter((item,index)=>index===dateActuelle[1]-1)[0];
+		
+
 		const joursDansLeMois = this.obtenirJoursDansLeMois();
 		const premierJourDuMois = this.day; // 2 soit mercredi
 		const nbLignes = 6;
@@ -93,8 +101,12 @@ class Calendrier {
 				if (cpt < premierJourDuMois || cpt2 > joursDansLeMois) {
 					tdNode = document.createTextNode(``);
 				} else {
+					
 					tdNode = document.createTextNode(`${cpt2}`);
 					td.className = 'joursSemaine';
+					if (cpt2 < dateActuelle[0] && this.mois === moisActuelleEnLettre && this.year === dateActuelle[2]) {
+						td.className = ' outDated';
+					}
 					cpt2++;
 				}
 				cpt++;

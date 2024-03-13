@@ -56,21 +56,18 @@ class GestionnaireFetes {
 			const VERBE = isAnniversaireProche ? 'aura' : 'a';
 			const PREPOSITION = isAnniversaireProche ? 'dans' : '';
 			const STYLE = isAnniversaireProche ? 'timeLeft red' : 'timeLeft minus';
-			const TEMPS_RESTANT = isAnniversaireProche ? tempsRestantPourAniversaire : '';
+			const TEMPS_RESTANT = isAnniversaireProche ? Math.round(tempsRestantPourAniversaire) : '';
 
 
 			affichage += `
-      <div class="container">
-	      <div class="description">
-	      	<div class="text">
-			  <p><span class="dino">${aniv.prenom.toUpperCase()}</span> [${aniv.date[0]}/${
+			<div class="anivUser">
+			  <p class="mini_aniv"><span class="dino">${aniv.prenom.toUpperCase()}</span> [${aniv.date[0]}/${
 				aniv.date[1]
 			}/${
 				aniv.date[2]
 			}]<span class="${STYLE}"> ${VERBE} ${age} ans ${PREPOSITION} ${TEMPS_RESTANT} ${UNITEE_TEMPS}</span></p>
-	      	</div>
-      	</div>
-    </div>
+	     
+			</div>
       `;
 		});
 
@@ -78,3 +75,4 @@ class GestionnaireFetes {
 	}
 }
 export default GestionnaireFetes;
+

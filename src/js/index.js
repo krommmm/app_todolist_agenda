@@ -95,6 +95,7 @@ let infos = [
 	{ class: 'course', typeList: 'course' },
 	{ class: 'fetes', typeList: 'fetes' },
 ];
+
 infos.forEach((info) => {
 	document.addEventListener('click', (event) => {
 		let clickedElement = event.target;
@@ -102,7 +103,7 @@ infos.forEach((info) => {
 		if (clickedElement.classList.contains('aniv')) {
 			document.querySelector('.input').style.display = 'none';
 			document.querySelector('.fa-calendar-days').style.display = 'none';
-		} else {
+		} else if(!clickedElement.classList.contains('aniv') && clickedElement.classList.contains('btn')){
 			document.querySelector('.input').style.display = 'flex';
 			document.querySelector('.fa-calendar-days').style.display = 'flex';
 		}

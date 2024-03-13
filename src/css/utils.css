@@ -29,7 +29,8 @@ html {
 	text-transform:lowercase;
 }
 .dino{
-	font-family:dino;
+	font-family:cursive;
+	font-size:1rem;
 }
 .red{
 	color: red!important;

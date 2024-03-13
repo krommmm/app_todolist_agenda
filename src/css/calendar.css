@@ -140,6 +140,11 @@ td {
 	padding: 1px;
 	background-color: rgb(0, 102, 255);
 }
+.outDated {
+	filter: brightness(0.5);
+	color: white;
+	background-color: rgba(255, 255, 255, 0.1);
+}
 
 .when {
 	position: absolute;
@@ -161,9 +166,8 @@ td {
 }
 
 @media screen and (max-width: 600px) {
-
 	body .calendar {
-	top: -50px;
+		top: -50px;
 	}
 
 	#list_container {
@@ -194,8 +198,7 @@ td {
 		background-size: 259px;
 	}
 	body .btn {
-		min-width:100px;
-	
+		min-width: 100px;
 	}
 	body .when {
 		position: absolute;
