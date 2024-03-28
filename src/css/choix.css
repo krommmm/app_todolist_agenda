@@ -44,8 +44,15 @@
 	transform: translateX(-100px) rotate(-45deg);
 }
 
+
+
 .btn-default:hover:before {
 	transform: translateX(180px) rotate(-45deg);
+}
+@media screen and (max-width: 450px){
+	.btn-default:active:before, .btn-default:focus:before {
+		transform: translateX(180px) rotate(-45deg);
+	}
 }
 
 .btn-santa {
