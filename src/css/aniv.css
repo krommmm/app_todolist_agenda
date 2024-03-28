@@ -1,0 +1,64 @@
+body .anivUser{
+width: 100vw;
+display:flex;
+justify-content:center;
+align-items: center;
+flex-wrap:wrap;
+}
+
+.follow {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+}
+
+.follow__header {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-image: url("https://static.vecteezy.com/ti/vecteur-libre/p3/6029969-bleu-ciel-skyscape-fond-concept-vectoriel.jpg");
+    background-size: cover;
+}
+
+.follow__header img {
+    border: 6px solid white;
+    position: absolute;
+    left: 40%;
+    top: 50%;
+}
+
+
+
+.follow__main {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.follow__main>h2 {
+    margin-bottom: 15px;
+}
+
+.follow__footer {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+}
+.follow__footer>button{
+        padding: 10px 20px;
+}
+
+.follow img {
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}

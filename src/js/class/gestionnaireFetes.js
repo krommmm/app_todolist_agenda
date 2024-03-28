@@ -10,19 +10,22 @@ class GestionnaireFetes {
 		let age = (dateActuelleMs - dateAnivMs) / (1000 * 60 * 60 * 24 * 365);
 		return age;
 	}
-	getCurrentDateMS(){
+	getCurrentDateMS() {
 		let dateActuelleEnMs = new Year();
 		let dateMoisAnnee = dateActuelleEnMs.obtenirDateActuelle();
-		let dateActuelleMs =  new Date(
+		let dateActuelleMs = new Date(
 			dateMoisAnnee[2],
 			dateMoisAnnee[1] - 1,
 			dateMoisAnnee[0]
 		);
 		return dateActuelleMs;
 	}
-	getTempsRestantPourAnniversaire(dateMoisAnnee,aniv,dateActuelleMs){
+	getTempsRestantPourAnniversaire(dateMoisAnnee, aniv, dateActuelleMs) {
 		const UN_JOUR_EN_MILLISECONDS = 1000 * 60 * 60 * 24;
-		let tempsRestantPourAniversaire =(new Date(dateMoisAnnee[2], aniv.date[1] - 1, aniv.date[0]) - dateActuelleMs) / (UN_JOUR_EN_MILLISECONDS);
+		let tempsRestantPourAniversaire =
+			(new Date(dateMoisAnnee[2], aniv.date[1] - 1, aniv.date[0]) -
+				dateActuelleMs) /
+			UN_JOUR_EN_MILLISECONDS;
 		return tempsRestantPourAniversaire;
 	}
 
@@ -32,7 +35,6 @@ class GestionnaireFetes {
 		let dateMoisAnnee = dateActuelleEnMs.obtenirDateActuelle();
 		let dateActuelleMs = this.getCurrentDateMS();
 
-
 		const getDateInMs = (date) => {
 			let dateInMs = new Date(date[2], date[1] - 1, date[0]);
 			return dateInMs.getTime();
@@ -40,32 +42,54 @@ class GestionnaireFetes {
 
 		this.anniversaire.forEach((aniv) => {
 			let dateAnivMs = new Date(aniv.date[2], aniv.date[1], aniv.date[0]);
-			let tempsRestantPourAniversaire = this.getTempsRestantPourAnniversaire(dateMoisAnnee, aniv, dateActuelleMs);
+			let tempsRestantPourAniversaire =
+				this.getTempsRestantPourAnniversaire(
+					dateMoisAnnee,
+					aniv,
+					dateActuelleMs
+				);
 			let ageReel = this.calculerAge(dateActuelleMs, dateAnivMs);
 			let age = Math.floor(ageReel);
 
 			let currentDateMs = new Date().getTime();
 			let dateInMs = getDateInMs(aniv.date);
-			let differenceMs = currentDateMs - (dateInMs-(1000*60*60*20));
-			let differenceYear = differenceMs / (1000 * 60 * 60 * 24 * 30.436875 * 12);
+			let differenceMs = currentDateMs - (dateInMs - 1000 * 60 * 60 * 20);
+			let differenceYear =
+				differenceMs / (1000 * 60 * 60 * 24 * 30.436875 * 12);
 
-			
-			const isAnniversaireProche = tempsRestantPourAniversaire <= 31 && tempsRestantPourAniversaire > 0;
+			const isAnniversaireProche =
+				tempsRestantPourAniversaire <= 31 &&
+				tempsRestantPourAniversaire > 0;
 			const UNITEE_TEMPS = isAnniversaireProche ? 'jours' : '';
- 			age = isAnniversaireProche ? parseInt(differenceYear+1) : parseInt(differenceYear);
+			age = isAnniversaireProche
+				? parseInt(differenceYear + 1)
+				: parseInt(differenceYear);
 			const VERBE = isAnniversaireProche ? 'aura' : 'a';
 			const PREPOSITION = isAnniversaireProche ? 'dans' : '';
-			const STYLE = isAnniversaireProche ? 'timeLeft red' : 'timeLeft minus';
-			const TEMPS_RESTANT = isAnniversaireProche ? Math.round(tempsRestantPourAniversaire) : '';
-
+			const STYLE = isAnniversaireProche
+				? 'timeLeft red'
+				: 'timeLeft minus';
+			const TEMPS_RESTANT = isAnniversaireProche
+				? Math.round(tempsRestantPourAniversaire)
+				: '';
 
 			affichage += `
 			<div class="anivUser">
-			  <p class="mini_aniv"><span class="dino">${aniv.prenom.toUpperCase()}</span> [${aniv.date[0]}/${
-				aniv.date[1]
-			}/${
-				aniv.date[2]
-			}]<span class="${STYLE}"> ${VERBE} ${age} ans ${PREPOSITION} ${TEMPS_RESTANT} ${UNITEE_TEMPS}</span></p>
+			
+			<div class="follow block">
+			<div class="follow__header"><img src="${aniv.avatar}" alt="" /></div>
+			<div class="follow__main">
+				<h2>${aniv.prenom}</h2>
+				<p></span> [${
+					aniv.date[0]
+				}/${aniv.date[1]}/${
+					aniv.date[2]
+				}]<span class="${STYLE}"> ${VERBE} ${age} ans ${PREPOSITION} ${TEMPS_RESTANT} ${UNITEE_TEMPS}</span></p>
+			</div>
+		</div>
+
+
+			 
 	     
 			</div>
       `;
@@ -75,4 +99,3 @@ class GestionnaireFetes {
 	}
 }
 export default GestionnaireFetes;
-

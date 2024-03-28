@@ -12,15 +12,40 @@
 
 #choix .lists {
 	margin: 10px;
-	background-color: rgb(0, 102, 255);
-	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.1);
+	/* background: rgb(112,142,212);
+	background: linear-gradient(93deg, rgba(112,142,212,1) 0%, rgba(72,111,214,1) 100%);  */
+	padding: 43px;
 	border-radius: 5px;
+	padding: 16px;
+	box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
 }
 
 .btn-default {
-	background-color: white;
-	color: black;
+	position: relative;
+	border: 1px solid black;
 	font-size: 14px;
+	overflow: hidden;
+	transition-duration: 0.4s;
+	box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+	background-color: #5e63f0;
+	color: white;
+}
+.btn-default:before {
+	content: '';
+	position: absolute;
+	height: 150px;
+	width: 20px;
+	background-color: rgba(255, 255, 255, 0.3);
+	box-shadow: 0 0 10px #fff;
+	filter: blur(1px);
+	top: -30px;
+	transition: 1.5s;
+	transform: translateX(-100px) rotate(-45deg);
+}
+
+.btn-default:hover:before {
+	transform: translateX(180px) rotate(-45deg);
 }
 
 .btn-santa {
