@@ -4,6 +4,7 @@ display:flex;
 justify-content:center;
 align-items: center;
 flex-wrap:wrap;
+margin-top: 25px;
 }
 
 .follow {
@@ -24,7 +25,7 @@ flex-wrap:wrap;
 .follow__header img {
     border: 6px solid white;
     position: absolute;
-    left: 40%;
+    left: 35%;
     top: 50%;
 }
 
