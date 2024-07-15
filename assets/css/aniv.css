@@ -70,6 +70,14 @@ body .anivUser {
 .birthDays {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    margin-top: 21px;
 }
 
 .birthDay {
@@ -100,8 +108,8 @@ body .anivUser {
 .birthDay img {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     object-fit: cover;
+    border: 3px solid white;
 }
 
 /* MODALS BIRTHDAYS */
@@ -124,7 +132,7 @@ body .anivUser {
 .modal-add-birthDay__container {
     background-image: url("https://images4.alphacoders.com/134/1345708.png");
     background-size: cover;
-    background-position-x:center;
+    background-position-x: center;
     background-repeat: no-repeat;
     width: 300px;
     display: flex;
@@ -161,7 +169,7 @@ body .anivUser {
 .modal-add-birthDay__container .casuInput {
     padding: 5px;
     margin: 5px;
-    background-color: rgba(255,255,255,.9);
+    background-color: rgba(255, 255, 255, .9);
     color: black;
     font-weight: 600;
 }
@@ -172,7 +180,7 @@ body .anivUser {
 }
 
 .JMA input {
-    background-color: rgba(255,255,255,.9);
+    background-color: rgba(255, 255, 255, .9);
     color: black;
     font-weight: 600;
     padding: 4px;
@@ -180,7 +188,7 @@ body .anivUser {
     width: 64px;
 }
 
-.birthDate-submit{
+.birthDate-submit {
     background-color: rgb(255, 255, 255);
 }
 
@@ -269,6 +277,6 @@ body .anivUser {
 }
 
 /* BOUTONS SELECTED TIME */
-.selectedTime{
-    display:flex;
+.selectedTime {
+    display: flex;
 }
