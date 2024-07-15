@@ -41,9 +41,9 @@ export class AnniversaryUI extends IAnniversaryUI {
 
 
 
-    renderAnniversariesToUI() {
+    renderAnniversariesToUI(nb) {
         // mise à jour des infos(remainingDays, age, today)
-        this.anniversaryList.anniversaryList.forEach((anniv)=>{
+        this.anniversaryList.anniversaryList.forEach((anniv) => {
             let remainingDays = this.anniversaryList.getRemainingDays(anniv.date, anniv.month, anniv.year);
             let myAge = this.anniversaryList.culculateAge(anniv.date, anniv.month, anniv.year);
             let age = myAge.age;
@@ -56,7 +56,30 @@ export class AnniversaryUI extends IAnniversaryUI {
 
         this.anniversariesContainer = document.querySelector(".birthDays");
         this.anniversariesContainer.innerHTML = "";
-        this.anniversaryList.anniversaryList.filter((anniv) => anniv.remainingDays > -1 && anniv.remainingDays <= 60).sort((a, b) => a.remainingDays - b.remainingDays).forEach((anniversary) => this.addAnniversaryToUI(anniversary));
+        switch (nb) {
+            case 0:
+                this.anniversaryList.anniversaryList.filter((anniv) => anniv.remainingDays > -1 && anniv.remainingDays <= 31).sort((a, b) => a.remainingDays - b.remainingDays).forEach((anniversary) => this.addAnniversaryToUI(anniversary));
+                break;
+
+            case 1:
+                this.anniversaryList.anniversaryList.filter((anniv) => anniv.remainingDays > -1 && anniv.remainingDays <= 62).sort((a, b) => a.remainingDays - b.remainingDays).forEach((anniversary) => this.addAnniversaryToUI(anniversary));
+                break;
+
+            case 2:
+                this.anniversaryList.anniversaryList.filter((anniv) => anniv.remainingDays > -1 && anniv.remainingDays <= 180).sort((a, b) => a.remainingDays - b.remainingDays).forEach((anniversary) => this.addAnniversaryToUI(anniversary));
+                break;
+
+            case 3:
+                this.anniversaryList.anniversaryList.filter((anniv) => anniv.remainingDays > -1 && anniv.remainingDays <= 365).sort((a, b) => a.remainingDays - b.remainingDays).forEach((anniversary) => this.addAnniversaryToUI(anniversary));
+                break;
+
+            default:
+                this.anniversaryList.anniversaryList.filter((anniv) => anniv.remainingDays > -1 && anniv.remainingDays <= 31).sort((a, b) => a.remainingDays - b.remainingDays).forEach((anniversary) => this.addAnniversaryToUI(anniversary));
+
+
+
+        }
+        // this.anniversaryList.anniversaryList.filter((anniv) => anniv.remainingDays > -1 && anniv.remainingDays <= 60).sort((a, b) => a.remainingDays - b.remainingDays).forEach((anniversary) => this.addAnniversaryToUI(anniversary));
     }
 
     configureBirthDayInfoToUI(anniversary) {
@@ -75,6 +98,13 @@ export class AnniversaryUI extends IAnniversaryUI {
 
         this.container.innerHTML = `
         <button class="btn add-aniv">Add anniv</button>
+        <div class="selectedTime">
+         <button class="btn selectedTime-1">1 months</button>
+          <button class="btn selectedTime-2">2 months</button>
+           <button class="btn selectedTime-6">6 months</button>
+           <button class="btn selectedTime-12">All</button>
+        </div>
+
         <div class="birthDays">
 
         </div>

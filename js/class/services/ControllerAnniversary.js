@@ -4,6 +4,7 @@ export class ControllerAnniversary {
         this.modalUI = modalUI;
         this.currentPage = "toDo";
         this.id = parseInt(JSON.parse(localStorage.getItem("agenda-id"))) || 1;
+        this.showNbAnniversary = 0;
 
         this.init();
     }
@@ -35,6 +36,19 @@ export class ControllerAnniversary {
             this.addAnniversary(e);
             this.modalUI.close("modal-add-birthDay");
             this.modalUI.clearInputs("modal-add-birthDay");
+        } else if (e.target.classList.contains("selectedTime-1")) {
+            this.showNbAnniversary = 0;
+            this.displayAnniversary(this.showNbAnniversary);
+        } else if (e.target.classList.contains("selectedTime-2")) {
+            this.showNbAnniversary = 1;
+            this.displayAnniversary(this.showNbAnniversary);
+        }
+        else if (e.target.classList.contains("selectedTime-6")) {
+            this.showNbAnniversary = 2;
+            this.displayAnniversary(this.showNbAnniversary);
+        } else if (e.target.classList.contains("selectedTime-12")) {
+            this.showNbAnniversary = 3;
+            this.displayAnniversary(this.showNbAnniversary);
         }
     }
 
@@ -42,15 +56,14 @@ export class ControllerAnniversary {
         this.anniversaryUI.updateBtnStyleToUI(e);
     }
 
-    displayAnniversary() {
-        console.log(this.anniversaryUI.anniversaryList.anniversaryList);
+    displayAnniversary(nb) {
         this.anniversaryUI.displayAnniversaryPageToUI();
-        this.anniversaryUI.renderAnniversariesToUI();
-        
+        this.anniversaryUI.renderAnniversariesToUI(nb);
+
     }
 
     addAnniversary(e) {
-  
+
         const container = e.target.closest(".modal-add-birthDay__container");
         const prenom = container.querySelector(".birthDay-name");
         const nom = container.querySelector(".birthDay-firstName");
@@ -73,13 +86,13 @@ export class ControllerAnniversary {
             imgUrl: imgUrl.value,
             remainingDays: remainingDays
         }
-    
+
 
         this.anniversaryUI.anniversaryList.addAnniversary(anniversary);
         this.anniversaryUI.renderAnniversariesToUI();
         this.id++;
-        localStorage.setItem("agenda-id",JSON.stringify(this.id));
-     
+        localStorage.setItem("agenda-id", JSON.stringify(this.id));
+
     }
 
     configureBirthDayInfo(e) {

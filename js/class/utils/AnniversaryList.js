@@ -17,7 +17,6 @@ export class AnniversaryList extends IAnniversaryList {
     }
 
     getUserAnniversaryInFormat_dmy(date, month, year) {
-
         let userFormat_dmy = [date, month, year];
         return userFormat_dmy;
     }
@@ -58,7 +57,7 @@ export class AnniversaryList extends IAnniversaryList {
 
 
         let diffEnMs = userDateMs - currentDateMs;
-        let remainingDays = -1;
+        let remainingDays = 365 + Math.ceil(diffEnMs / (1000 * 3600 * 24));
         if (diffEnMs > 0) {
             remainingDays = Math.ceil(diffEnMs / (1000 * 3600 * 24));
         }

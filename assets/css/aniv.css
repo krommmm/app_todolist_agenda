@@ -267,3 +267,8 @@ body .anivUser {
 .prenom {
     margin-right: 5px;
 }
+
+/* BOUTONS SELECTED TIME */
+.selectedTime{
+    display:flex;
+}
