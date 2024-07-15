@@ -25,15 +25,24 @@ export class AnniversaryList extends IAnniversaryList {
         const user = [parseInt(date), parseInt(month), parseInt(year)];
         const currentDate = new Date();
         let age = currentDate.getFullYear() - user[2];
+
         let today = false;
 
-        if (currentDate.getMonth() + 1 < user[1] || (currentDate.getMonth() + 1 === user[1] && currentDate.getDate() >= user[0])) {
+        if (currentDate.getMonth() + 1 > user[1]) {
+            age = age + 2;
+        } else if (currentDate.getMonth() + 1 === user[1] && currentDate.getDate() > user[0]) {
+            age = age + 1;
+        }
+       
+    
 
+
+        if (currentDate.getMonth() + 1 === user[1] && currentDate.getDate() === user[0]) {
             today = true;
         }
 
         const myAge = {
-            age: age, 
+            age: age,
             today: today
         }
         return myAge;
