@@ -30,7 +30,7 @@ export class AnniversaryList extends IAnniversaryList {
         let today = false;
 
         if (currentDate.getMonth() + 1 > user[1]) {
-            age = age + 2;
+            age = age + 1;
         } else if (currentDate.getMonth() + 1 === user[1] && currentDate.getDate() > user[0]) {
             age = age + 1;
         }
