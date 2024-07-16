@@ -49,7 +49,16 @@ export class ControllerAnniversary {
         } else if (e.target.classList.contains("selectedTime-12")) {
             this.showNbAnniversary = 3;
             this.displayAnniversary(this.showNbAnniversary);
+        } else if (e.target.classList.contains("birthDay-delete")) {
+            this.deleteAnniversary(e);
         }
+    }
+
+    deleteAnniversary(e) {
+        const id = e.target.closest(".modal-show-birthDay__content").dataset.id;
+        this.anniversaryUI.anniversaryList.deleteAnniversary(id);
+        this.anniversaryUI.renderAnniversariesToUI();
+        this.modalUI.close("modal-show-birthDay");
     }
 
     updateBtnStyle(e) {
@@ -59,7 +68,6 @@ export class ControllerAnniversary {
     displayAnniversary(nb) {
         this.anniversaryUI.displayAnniversaryPageToUI();
         this.anniversaryUI.renderAnniversariesToUI(nb);
-
     }
 
     addAnniversary(e) {

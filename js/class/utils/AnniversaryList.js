@@ -13,7 +13,8 @@ export class AnniversaryList extends IAnniversaryList {
     }
 
     deleteAnniversary(anniversaryId) {
-        this.anniversaryList = this.anniversaryList.filter(anniv => anniv.id !== anniversaryId)
+        this.anniversaryList = this.anniversaryList.filter(anniv => parseInt(anniv.id) !== parseInt(anniversaryId));
+        localStorage.setItem("agendarAnniversaries", JSON.stringify(this.anniversaryList));
     }
 
     getUserAnniversaryInFormat_dmy(date, month, year) {

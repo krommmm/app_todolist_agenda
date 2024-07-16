@@ -84,6 +84,7 @@ export class AnniversaryUI extends IAnniversaryUI {
 
     configureBirthDayInfoToUI(anniversary) {
         const container = document.querySelector(".modal-show-birthDay__content");
+        container.setAttribute("data-id", anniversary.id);
         container.querySelector(".prenom").textContent = anniversary.prenom;
         container.querySelector(".nom").textContent = anniversary.nom;
         container.querySelector(".photoAnniv").src = anniversary.imgUrl;
@@ -134,6 +135,7 @@ export class AnniversaryUI extends IAnniversaryUI {
                     <p class="birthDayDate">née le  20 juillet 1989</p>
                     <p class="birthDayWhen">aura 35 ans dans 6 jours</p>
                 </div>
+                <div class="btn birthDay-delete">supprimer</div>
             </div>
         </div>
         `;
