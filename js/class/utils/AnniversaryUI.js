@@ -100,7 +100,7 @@ export class AnniversaryUI extends IAnniversaryUI {
         this.container.innerHTML = `
         <button class="btn add-aniv">Add anniv</button>
         <div class="selectedTime">
-         <button class="btn selectedTime-1">1 months</button>
+         <button class="btn selectedTime-1">1 month</button>
           <button class="btn selectedTime-2">2 months</button>
            <button class="btn selectedTime-6">6 months</button>
            <button class="btn selectedTime-12">All</button>
