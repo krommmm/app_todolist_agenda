@@ -54,6 +54,7 @@
 	width: 100%;
 	background-color: white;
 	padding: 10px;
+	display:flex;
 }
 
 .container .description .text {
@@ -86,6 +87,7 @@
 	margin-right: -200px;
 	transition-duration: 0.5s;
 	transition-timing-function: ease;
+	padding: 10px;
 }
 
 .list .container .item i {
