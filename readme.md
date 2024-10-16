@@ -19,10 +19,5 @@ Application de gestion de tâches (To-do list) permettant d'effectuer des opéra
 
 `npm run start`
 
-### Détails de l'application:
-La date est détectée.<br>
-Un calendrier est créé d'aujourd'hui à dans 2 ans.<br>
-Des boutons sont sous écoute d'événements.<br>
-Ils affichent des listes dynamiquement.<br>
-D'autres événements gèrent l'input, la modification et la suppression.
+
 
