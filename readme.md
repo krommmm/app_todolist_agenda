@@ -11,13 +11,7 @@ Application de gestion de tâches (To-do list) permettant d'effectuer des opéra
  Un agenda intégré permet de définir des échéances pour chaque tâche.<br>
  Les tâches sont stockées dans le localStorage
 
-### Installer les dépendances:
 
-`npm install`
-
-### Lancer l'application:
-
-`npm run start`
 
 
 
