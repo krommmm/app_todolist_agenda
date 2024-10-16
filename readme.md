@@ -9,7 +9,9 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 ## Description:
-Architecture modulaire et flexible  
+Application de gestion de tâches (To-do list) permettant d'effectuer des opérations CRUD (Créer, Lire, Mettre à jour, Supprimer).<br>
+ Un agenda intégré permet de définir des échéances pour chaque tâche.<br>
+ Les tâches sont stockées dans le localStorage
 
 ### Installer les dépendances:
 
